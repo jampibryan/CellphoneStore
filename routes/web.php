@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+// Route::get('/productos', function () {
+//     return view('productos.index');
+// })->middleware(['auth', 'verified'])->name('productos');
+
+Route::resource('productos', ProductoController::class);
+
 
 // useless routes
 // Just to demo sidebar dropdown links active states.

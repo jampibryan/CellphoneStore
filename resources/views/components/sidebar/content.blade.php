@@ -6,6 +6,12 @@
         </x-slot>
     </x-sidebar.link>
 
+    <x-sidebar.link title="Productos" href="{{ route('productos.index') }}" :isActive="request()->routeIs('dashboard')">
+        <x-slot name="icon">
+            <x-icons.dashboard class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
     <x-sidebar.dropdown title="Buttons" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
