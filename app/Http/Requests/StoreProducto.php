@@ -25,7 +25,7 @@ class StoreProducto extends FormRequest
     {
         return [
             'codigo'=> 'required',
-            'nombre'=> 'required',
+            'marca'=> 'required',
             'descripcion'=> 'required',
             'precio'=> 'required',
         ];

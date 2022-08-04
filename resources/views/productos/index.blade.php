@@ -5,7 +5,7 @@
                 {{ __('Productos') }}
             </h2>
 
-            <x-button target="_blank" href="https://github.com/jampibryan" variant="black"
+            <x-button target="_blank" href="https://github.com/jampibryan/CellphoneStore" variant="black"
                 class="justify-center max-w-xs gap-2">
                 <x-icons.github class="w-6 h-6" aria-hidden="true" />
                 <span>Star on Github</span>
@@ -14,43 +14,45 @@
         </div>
 
     </x-slot>
-    
-    <a href="{{route('productos.create')}}" class="btn btn-danger d-flex justify-content-center" >CREAR PRODUCTO</a>
 
-    <table class="table table-dark table-striped mt-4">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Código</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
+    <a href="{{ route('productos.create') }}" class="w-16 bg-blue-600 py-2 px-4 italic text-2xl">CREAR PRODUCTO</a>
 
-        <tbody>
-            @foreach ($productos as $producto)
+    <div class="container flex justify-center mt-4">
+        <table class="bg-blue-800  border-8 border-double border-black-400">
+            <thead>
                 <tr>
-                    <td>{{ $producto->id }}</td>
-                    <td>{{ $producto->codigo }}</td>
-                    <td>{{ $producto->nombre }}</td>
-                    <td>{{ $producto->descripcion }}</td>
-                    <td>{{ $producto->precio }}</td>
-                    <td>
-                        <a href="{{ route('productos.edit', $producto) }}" class="btn btn-info">Editar</a>
-                        <form action="{{ route('productos.destroy', $producto) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <button class="btn btn-danger mt-1">Eliminar</button>
-                        </form>
-                    </td>
+                    <th class="border text-center px-8 py-2 italic text-2xl">ID</th>
+                    <th class="border text-center px-8 py-2 italic text-2xl">Código</th>
+                    <th class="border text-center px-8 py-2 italic text-2xl">Producto</th>
+                    <th class="border text-center px-8 py-2 italic text-2xl">Descripción</th>
+                    <th class="border text-center px-8 py-2 italic text-2xl">Precio</th>
+                    <th class="border text-center px-8 py-2 italic text-2xl">Acciones</th>
                 </tr>
-            @endforeach
-        </tbody>
+            </thead>
 
-    </table>
+            <tbody>
+                @foreach ($productos as $producto)
+                    <tr>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->id }}</td>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->codigo }}</td>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->marca }}</td>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->descripcion }}
+                        </td>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->precio }}</td>
+                        <td class="border text-center px-4 py-2 italic text-base">
+                            <a href="{{ route('productos.edit', $producto) }}" class="bg-blue-500 p-2">Editar</a>
+                            <form action="{{ route('productos.destroy', $producto) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="bg-red-600 p-2 text-white mt-4">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
 
+        </table>
+    </div>
 
 
 </x-app-layout>

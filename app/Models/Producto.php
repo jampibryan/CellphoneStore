@@ -10,7 +10,7 @@ class Producto extends Model
     use HasFactory;
 
     // fillable: Guarda solo los campos que están en el array
-    protected $fillable = ['codigo','nombre','descripcion','precio'];
+    protected $fillable = ['codigo','marca','descripcion','precio'];
 
     // guarded: Guarda todos campos menos 'categoria'
     // protected $guarded = ['categoria'];
