@@ -25,7 +25,7 @@
                     <th class="border text-center px-8 py-2 italic text-2xl">DNI</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">NOMBRE</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">CARGO</th>
-                    {{-- <th class="border text-center px-8 py-2 italic text-2xl">SUELDO</th> --}}
+                    <th class="border text-center px-8 py-2 italic text-2xl">SUELDO</th>
                     {{-- <th class="border text-center px-8 py-2 italic text-2xl">FECHA DE CONTRATO</th> --}}
 
                     <th class="border text-center px-8 py-2 italic text-2xl">Acciones</th>
@@ -38,8 +38,17 @@
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->id }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->dni }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->nombre }}</td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->cargo }}
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->cargo }}</td>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">
+                            @if ($empleado->cargo == 'Gerente')
+                                {{'S/. '. 3500}}
+                                @elseif ($empleado->cargo == 'Supervisor')
+                                {{'S/. '. 1800}}
+                                @elseif ($empleado->cargo == 'Asistente')
+                                {{'S/. '. 1000}}
+                            @endif
                         </td>
+
                         <td class="border text-center px-4 py-2 italic text-base">
                             <a href="{{ route('empleados.edit', $empleado) }}" class="bg-blue-500 p-2">Editar</a>
                             <form action="{{ route('empleados.destroy', $empleado) }}" method="post">
