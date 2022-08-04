@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProducto;
-use App\Models\Producto;
+use App\Http\Requests\StoreEmpleado;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
 
-class ProductoController extends Controller
+class EmpleadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $productos = Producto::all();
+        $empleados = Empleado::all();
 
-        return view('productos.index', compact('productos'));
+        return view('empleados.index', compact('empleados'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('productos.create');
+        return view('empleados.create');
     }
 
     /**
@@ -36,11 +36,11 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProducto $request)
+    public function store(StoreEmpleado $request)
     {
-        $producto = Producto::create($request->all());
+        $empleado = Empleado::create($request->all());
 
-        return redirect()->route('productos.index');
+        return redirect()->route('empleados.index');
     }
 
     /**
@@ -60,9 +60,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit(Empleado $empleado)
     {
-        return view ('productos.edit', compact('producto'));
+        return view('empleados.edit', compact('empleado'));
     }
 
     /**
@@ -72,11 +72,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreProducto $request, Producto $producto)
+    public function update(StoreEmpleado $request, Empleado $empleado)
     {
-        $producto->update($request->all());
-        
-        return redirect()->route('productos.index');
+        $empleado->update($request->all());
+
+        return redirect()->route('empleados.index');
     }
 
     /**
@@ -85,9 +85,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy(Empleado $empleado)
     {
-        $producto->delete();
-        return redirect()->route('productos.index');
+        $empleado->delete();
+        return redirect()->route('empleados.index');
     }
 }

@@ -24,33 +24,36 @@
                 <label for="codigo" class="form-label">Código</label>
                 <input id="codigo" name="codigo" type="text" class="text-black" tabindex="1"
                     value="{{ old('codigo') }}">
+                @error('codigo')
+                    <small>*{{ $message }}</small>
+                @enderror
             </div>
-            @error('codigo')
-                <small>*{{ $message }}</small>
-            @enderror
 
             <div class="mb-3">
                 <label for="marca" class="form-label">Marca</label>
                 <input id="marca" name="marca" type="text" class="text-black" tabindex="2"
                     value="{{ old('marca') }}">
+                @error('marca')
+                    <small>*{{ $message }}</small>
+                @enderror
             </div>
-            @error('marca')
-                <small>*{{ $message }}</small>
-            @enderror
 
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción</label>
                 <textarea id="descripcion" name="descripcion" type="text" class="text-black" tabindex="1"> 
                 {{ old('descripcion') }}
             </textarea>
+                @error('descripcion')
+                    <small>*{{ $message }}</small>
+                @enderror
             </div>
-            @error('descripcion')
-                <small>*{{ $message }}</small>
-            @enderror
 
             <div class="mb-3">
                 <label for="precio" class="form-label">Precio</label>
                 <input id="precio" name="precio" type="number" step="any" class="text-black">
+                @error('precio')
+                    <small>*{{ $message }}</small>
+                @enderror
             </div>
 
             <a href="{{ route('productos.index') }}" class="bg-blue-800 p-2 text-white ml-20">Cancelar</a>

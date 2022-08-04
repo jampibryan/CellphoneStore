@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::get('/dashboard', function () {
 // })->middleware(['auth', 'verified'])->name('productos');
 
 Route::resource('productos', ProductoController::class);
+
+Route::resource('empleados', EmpleadoController::class);
 
 
 // useless routes
