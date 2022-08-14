@@ -23,7 +23,7 @@
                 <tr>
                     <th class="border text-center px-8 py-2 italic text-2xl">ID</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">Código</th>
-                    <th class="border text-center px-8 py-2 italic text-2xl">Producto</th>
+                    <th class="border text-center px-8 py-2 italic text-2xl">Marca</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">Descripción</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">Precio</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">Acciones</th>
@@ -38,7 +38,7 @@
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->marca }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->descripcion }}
                         </td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->precio }}</td>
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">S/. {{$producto->precio }}</td>
                         <td class="border text-center px-4 py-2 italic text-base">
                             <a href="{{ route('productos.edit', $producto) }}" class="bg-blue-500 p-2">Editar</a>
                             <form action="{{ route('productos.destroy', $producto) }}" method="post">

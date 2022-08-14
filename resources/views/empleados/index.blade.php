@@ -40,7 +40,7 @@
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->nombre }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->cargo }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">
-                            @if ($empleado->cargo == 'Gerente')
+                            @if ($empleado->cargo == 'Gerente General')
                                 {{'S/. '. 3500}}
                                 @elseif ($empleado->cargo == 'Supervisor')
                                 {{'S/. '. 1800}}
