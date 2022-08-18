@@ -22,19 +22,28 @@
             @method('put')
 
             <div class="mb-3 w-60">
-                <label for="dni" class="form-label">DNI</label>
-                <input id="dni" name="dni" type="text" class="text-black"
-                    value="{{ old('dni', $empleado->dni) }}">
-                @error('dni')
+                <label for="codigoE" class="form-label">CÓDIGO</label>
+                <input id="codigoE" name="codigoE" type="number" class="text-black"
+                    value="{{ old('codigoE', $empleado->codigoE) }}">
+                @error('codigoE')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>
 
             <div class="mb-3 w-60">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input id="nombre" name="nombre" type="text" class="text-black"
-                    value="{{ old('nombre', $empleado->nombre) }}">
-                @error('nombre')
+                <label for="dniE" class="form-label">DNI</label>
+                <input id="dniE" name="dniE" type="text" class="text-black"
+                    value="{{ old('dniE', $empleado->dniE) }}">
+                @error('dniE')
+                    <small>*{{ $message }}</small>
+                @enderror
+            </div>
+
+            <div class="mb-3 w-60">
+                <label for="nombreE" class="form-label">Nombre</label>
+                <input id="nombreE" name="nombreE" type="text" class="text-black"
+                    value="{{ old('nombreE', $empleado->nombreE) }}">
+                @error('nombreE')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>

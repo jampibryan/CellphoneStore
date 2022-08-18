@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCliente;
-use App\Models\Cliente;
+use App\Http\Requests\StoreCompra;
+use App\Models\Compra;
 use Illuminate\Http\Request;
 
-class ClienteController extends Controller
+class CompraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,13 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = Cliente::all();
-        
-        return view('clientes.index', compact('clientes'));
+
+        $compras = Compra::select('*')->join('clientes', 'clientes.id', '=', 'compras.cliente_id')->join('productos', 'productos.id', '=', 'compras.producto_id')->get();
+        // $compras = Compra::select('*')->join('clientes', 'clientes.codigoC', '=', 'compras.cliente_codigo')->join('productos', 'productos.codigoP', '=', 'compras.producto_codigo')->get();
+        // return view('compras.index', compact('compras'));
+
+        // $compras = Compra::all();
+        return view('compras.index', compact('compras'));
     }
 
     /**
@@ -27,7 +31,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        return view('compras.create');
     }
 
     /**
@@ -36,11 +40,10 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCliente $request)
+    public function store(StoreCompra $request)
     {
-        $cliente = Cliente::create($request->all());
-
-        return redirect()->route('clientes.index');
+        $compra = Compra::create($request->all());
+        return redirect()->route('compras.index');
     }
 
     /**
@@ -60,9 +63,9 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cliente $cliente)
+    public function edit(Compra $compra)
     {
-        return view('clientes.edit', compact('cliente'));
+        return view('compras.edit', compact('compra'));
     }
 
     /**
@@ -72,11 +75,11 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreCliente $request, Cliente $cliente)
+    public function update(StoreCompra $request, Compra $compra)
     {
-        $cliente->update($request->all());
+        $compra->update($request->all());
 
-        return redirect()->route('clientes.index');
+        return redirect()->route('compras.index');
     }
 
     /**
@@ -85,9 +88,9 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Compra $compra)
     {
-        $cliente->delete();
-        return redirect()->route('clientes.index');
+        $compra->delete();
+        return redirect()->route('compras.index');
     }
 }

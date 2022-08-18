@@ -21,9 +21,9 @@
             @csrf
 
             <div class="mb-3 w-60">
-                <label for="codigo" class="form-label">Código</label>
-                <input id="codigo" name="codigo" type="text" class="text-black" tabindex="1" maxlength="4" value="{{ old('codigo') }}">
-                @error('codigo')
+                <label for="codigoP" class="form-label">Código</label>
+                <input id="codigoP" name="codigoP" type="text" class="text-black" tabindex="1" maxlength="4" value="{{ old('codigoP') }}">
+                @error('codigoP')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>

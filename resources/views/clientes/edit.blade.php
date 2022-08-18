@@ -19,22 +19,31 @@
         <form action="{{ route('clientes.update', $cliente) }}" method="post">
             @csrf
 
-            @method('put')
+            @method('put') 
 
             <div class="mb-3 w-60">
-                <label for="dni" class="form-label">DNI</label>
-                <input id="dni" name="dni" type="number" class="text-black"
-                    value="{{ old('dni', $cliente->dni) }}">
-                @error('dni')
+                <label for="codigoC" class="form-label">CÓDIGO</label>
+                <input id="codigoC" name="codigoC" type="text" maxlength="4" class="text-black"
+                    value="{{ old('codigoC', $cliente->codigoC) }}">
+                @error('codigoC')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>
 
             <div class="mb-3 w-60">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input id="nombre" name="nombre" type="text" class="text-black"
-                    value="{{ old('nombre', $cliente->nombre) }}">
-                @error('nombre')
+                <label for="dniC" class="form-label">DNI</label>
+                <input id="dniC" name="dniC" type="number" class="text-black"
+                    value="{{ old('dniC', $cliente->dniC) }}">
+                @error('dniC')
+                    <small>*{{ $message }}</small>
+                @enderror
+            </div>
+
+            <div class="mb-3 w-60">
+                <label for="nombreC" class="form-label">Nombre</label>
+                <input id="nombreC" name="nombreC" type="text" class="text-black"
+                    value="{{ old('nombreC', $cliente->nombreC) }}">
+                @error('nombreC')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>

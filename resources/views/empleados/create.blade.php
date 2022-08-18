@@ -21,19 +21,28 @@
             @csrf
 
             <div class="mb-3 w-60">
-                <label for="dni" class="form-label">DNI</label>
-                <input id="dni" name="dni" type="text" class="text-black" maxlength="8"
-                    tabindex="1" value="{{ old('dni') }}">
-                @error('dni')
+                <label for="codigoE" class="form-label">CÓDIGO</label>
+                <input id="codigoE" name="codigoE" type="text" class="text-black" maxlength="4"
+                    tabindex="1" value="{{ old('codigoE') }}">
+                @error('codigoE')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>
 
             <div class="mb-3 w-60">
-                <label for="nombre" class="form-label">NOMBRE</label>
-                <input id="nombre" name="nombre" type="text" class="text-black" tabindex="2"
-                    value="{{ old('nombre') }}">
-                @error('nombre')
+                <label for="dniE" class="form-label">DNI</label>
+                <input id="dniE" name="dniE" type="text" class="text-black" maxlength="8"
+                    tabindex="1" value="{{ old('dniE') }}">
+                @error('dniE')
+                    <small>*{{ $message }}</small>
+                @enderror
+            </div>
+
+            <div class="mb-3 w-60">
+                <label for="nombreE" class="form-label">NOMBRE</label>
+                <input id="nombreE" name="nombreE" type="text" class="text-black" tabindex="2"
+                    value="{{ old('nombreE') }}">
+                @error('nombreE')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>

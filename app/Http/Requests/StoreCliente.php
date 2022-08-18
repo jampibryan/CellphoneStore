@@ -24,8 +24,8 @@ class StoreCliente extends FormRequest
     public function rules()
     {
         return [
-            'dni'=> 'required',
-            'nombre'=> 'required',
+            'dniC'=> 'required',
+            'nombreC'=> 'required',
             'correo'=> 'required',
             'celular'=> 'required',
         ];

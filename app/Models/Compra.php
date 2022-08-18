@@ -5,14 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Empleado extends Model
+class Compra extends Model
 {
     use HasFactory;
-
-    // protected $fillable = ['dni','codigo', 'nombre', 'cargo'];
+    // protected $fillable = ['codigo'];
     protected $guarded = [];
-    // protected $primaryKey = 'codigoE';
-
     public $timestamps=false;
-    
+
 }

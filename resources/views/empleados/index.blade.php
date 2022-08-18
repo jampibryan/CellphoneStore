@@ -21,11 +21,12 @@
         <table class="bg-blue-800  border-8 border-double border-black-400">
             <thead>
                 <tr>
-                    <th class="border text-center px-8 py-2 italic text-2xl">ID</th>
-                    <th class="border text-center px-8 py-2 italic text-2xl">DNI</th>
-                    <th class="border text-center px-8 py-2 italic text-2xl">NOMBRE</th>
-                    <th class="border text-center px-8 py-2 italic text-2xl">CARGO</th>
-                    <th class="border text-center px-8 py-2 italic text-2xl">SUELDO</th>
+                    <th class="border text-center px-6 py-2 italic text-2xl">ID</th>
+                    <th class="border text-center px-6 py-2 italic text-2xl">CÓDIGO</th>
+                    <th class="border text-center px-6 py-2 italic text-2xl">DNI</th>
+                    <th class="border text-center px-6 py-2 italic text-2xl">NOMBRE</th>
+                    <th class="border text-center px-6 py-2 italic text-2xl">CARGO</th>
+                    <th class="border text-center px-6 py-2 italic text-2xl">SUELDO</th>
                     {{-- <th class="border text-center px-8 py-2 italic text-2xl">FECHA DE CONTRATO</th> --}}
 
                     <th class="border text-center px-8 py-2 italic text-2xl">Acciones</th>
@@ -35,11 +36,12 @@
             <tbody>
                 @foreach ($empleados as $empleado)
                     <tr>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->id }}</td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->dni }}</td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->nombre }}</td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $empleado->cargo }}</td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">
+                        <td class="border text-center px-2 py-2 italic text-2xl text-white">{{ $empleado->id }}</td>
+                        <td class="border text-center px-2 py-2 italic text-2xl text-white">{{ $empleado->codigoE }}</td>
+                        <td class="border text-center px-2 py-2 italic text-2xl text-white">{{ $empleado->dniE }}</td>
+                        <td class="border text-center px-2 py-2 italic text-2xl text-white">{{ $empleado->nombreE }}</td>
+                        <td class="border text-center px-2 py-2 italic text-2xl text-white">{{ $empleado->cargo }}</td>
+                        <td class="border text-center px-2 py-2 italic text-2xl text-white">
                             @if ($empleado->cargo == 'Gerente General')
                                 {{'S/. '. 3500}}
                                 @elseif ($empleado->cargo == 'Supervisor')

@@ -22,10 +22,10 @@
             @method('put')
 
             <div class="mb-3 w-60">
-                <label for="codigo" class="form-label">Código</label>
-                <input id="codigo" name="codigo" type="text" class="text-black" maxlength="4"
-                    value="{{ old('codigo', $producto->codigo) }}">
-                @error('codigo')
+                <label for="codigoP" class="form-label">Código</label>
+                <input id="codigoP" name="codigoP" type="text" class="text-black" maxlength="4"
+                    value="{{ old('codigoP', $producto->codigoP) }}">
+                @error('codigoP')
                     <small>*{{ $message }}</small>
                 @enderror
             </div>

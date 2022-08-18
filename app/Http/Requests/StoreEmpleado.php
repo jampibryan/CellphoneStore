@@ -24,8 +24,8 @@ class StoreEmpleado extends FormRequest
     public function rules()
     {
         return [
-            'dni'=> 'required',
-            'nombre'=> 'required',
+            'dniE'=> 'required',
+            'nombreE'=> 'required',
             'cargo'=> 'required',
         ];
     }

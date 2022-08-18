@@ -21,7 +21,7 @@
         <table class="bg-blue-800  border-8 border-double border-black-400">
             <thead>
                 <tr>
-                    <th class="border text-center px-8 py-2 italic text-2xl">ID</th>
+                    {{-- <th class="border text-center px-8 py-2 italic text-2xl">ID</th> --}}
                     <th class="border text-center px-8 py-2 italic text-2xl">Código</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">Marca</th>
                     <th class="border text-center px-8 py-2 italic text-2xl">Descripción</th>
@@ -33,8 +33,8 @@
             <tbody>
                 @foreach ($productos as $producto)
                     <tr>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->id }}</td>
-                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->codigo }}</td>
+                        {{-- <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->id }}</td> --}}
+                        <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->codigoP }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->marca }}</td>
                         <td class="border text-center px-4 py-2 italic text-2xl text-white">{{ $producto->descripcion }}
                         </td>

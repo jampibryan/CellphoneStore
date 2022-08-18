@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->integer('dni');
-            $table->string('nombre');
+            $table->string('codigoE')->unique();
+            $table->integer('dniE');
+            $table->string('nombreE');
             $table->string('cargo');
 
             $table->timestamps();
