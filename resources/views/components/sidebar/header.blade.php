@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-2">
         <x-application-logo aria-hidden="true" class="w-10 h-auto" />
-        <span class="sr-only">K UI Logo</span>
+        <span class="sr-only">CellphoneStore Logo</span>
     </a>
 
     <!-- Toggle button -->

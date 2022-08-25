@@ -15,4 +15,7 @@
     <div class="p-6 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
         {{ __("You're logged in!")  }}
     </div>
+    <div class="p-10 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1 text-2xl">
+        {{ __("Bienvenido a nuestra tienda virtual CellphoneStore")  }}
+    </div>
 </x-app-layout>

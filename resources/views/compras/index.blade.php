@@ -16,6 +16,8 @@
     </x-slot>
 
     <a href="{{ route('compras.create') }}" class="w-16 bg-blue-600 py-2 px-4 italic text-2xl">REGISTRAR COMPRAS</a>
+    <a href="{{route('compras.pdf') }}" class="w-16 bg-red-600 py-2 px-4 italic text-2xl">PDF</a>
+
 
     <div class="container flex justify-center mt-4">
         <table class="bg-blue-800  border-8 border-double border-black-400">

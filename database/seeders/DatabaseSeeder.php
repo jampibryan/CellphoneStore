@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         
         $producto3->codigoP = "0003";
         $producto3->marca = "Apple";
-        $producto3->descripcion = "Apple s4 Pr";
+        $producto3->descripcion = "Apple s4 Pro";
         $producto3->precio = "2699";
 
         $producto3->save();
@@ -158,14 +158,60 @@ class DatabaseSeeder extends Seeder
         $cliente3->save();
 
 
+
+
+        $cliente4 = new Cliente();
+        
+        $cliente4->codigoC = "1004";
+        $cliente4->dniC = "63246326";
+        $cliente4->nombreC = "Ricardo Gareca";
+        $cliente4->correo = "ricadorg@gmail.com";
+        $cliente4->celular = "943485301";
+        
+        $cliente4->save();
+
+
         //LLENADO DE DATOS PARA LA TABLA COMPRAS
-        $compra = new Compra();
+        $compra1 = new Compra();
         
-        $compra->cliente_id = 1;
-        $compra->producto_id = 1;
-        $compra->cantidad = 3;
-        // $compra->transaccion = "1010";
+        $compra1->cliente_id = 1;
+        $compra1->producto_id = 1;
+        $compra1->cantidad = 3;
+        // $compra1->transaccion = "1010";
         
-        $compra->save();
+        $compra1->save();
+
+
+
+        $compra2 = new Compra();
+        
+        $compra2->cliente_id = 2;
+        $compra2->producto_id = 3;
+        $compra2->cantidad = 2;
+        // $compra2->transaccion = "1010";
+        
+        $compra2->save();
+
+
+
+        $compra3 = new Compra();
+        
+        $compra3->cliente_id = 3;
+        $compra3->producto_id = 2;
+        $compra3->cantidad = 4;
+        // $compra3->transaccion = "1010";
+        
+        $compra3->save();
+
+
+
+        $compra4 = new Compra();
+        
+        $compra4->cliente_id = 3;
+        $compra4->producto_id = 2;
+        $compra4->cantidad = 4;
+        // $compra4->transaccion = "1010";
+        
+        $compra4->save();
     }
 }

@@ -36,6 +36,7 @@ Route::resource('empleados', EmpleadoController::class);
 
 Route::resource('clientes', ClienteController::class);
 
+Route::get('compras/pdf', [CompraController::class, 'pdf'])->name('compras.pdf');
 Route::resource('compras', CompraController::class);
 
 

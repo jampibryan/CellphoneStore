@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCompra;
 use App\Models\Compra;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class CompraController extends Controller
 {
@@ -22,6 +23,21 @@ class CompraController extends Controller
 
         // $compras = Compra::all();
         return view('compras.index', compact('compras'));
+    }
+
+    public function pdf()
+    {
+        $compras = Compra::select('*')->join('clientes', 'clientes.id', '=', 'compras.cliente_id')->join('productos', 'productos.id', '=', 'compras.producto_id')->get();
+        // $compras = Compra::all();
+        //  return view('productos.pdf', compact('productos'));
+        
+        
+        
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadHTML(view('compras.pdf', compact('compras')));
+        // return $pdf->download('lista_compras.pdf');
+        return $pdf->stream();
+    
     }
 
     /**
